@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SimpleClicker</string>
+    <string name="username">User Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="playoffline">Play Offline</string>
+    <string name="rpassword">Repeat Password</string>
+    <string name="backtologin">Return</string>
+</resources>
