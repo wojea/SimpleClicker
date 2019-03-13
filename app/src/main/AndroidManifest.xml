@@ -9,9 +9,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".RegisterFormula">
+        <activity android:name=".SupriseActivity"
+                  android:parentActivityName=".RegisterFormula">
         </activity>
-        <activity android:name=".MainMenu">
+        <activity android:name=".RegisterFormula"
+                  android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".MainMenu"
+                  android:parentActivityName=".MainActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
