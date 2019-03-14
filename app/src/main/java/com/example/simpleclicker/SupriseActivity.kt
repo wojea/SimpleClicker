@@ -27,7 +27,7 @@ class SupriseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         val spinner = findViewById<Spinner>(R.id.spinner)
         val adapter = ArrayAdapter.createFromResource(this,R.array.numbers,android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.setAdapter(adapter) //dlaczego to jest zle?
+        spinner.adapter = adapter //dlaczego to jest zle?
         spinner.onItemSelectedListener = this
     }
 }
