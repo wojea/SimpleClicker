@@ -9,18 +9,20 @@
 
     <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
                                                  android:layout_height="match_parent">
-    <Button
-            android:text="0"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
-            android:id="@+id/clicker"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.497"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent" android:textSize="36sp"
-            app:layout_constraintVertical_bias="0.021"/>
+        <Button
+                android:text="0"
+                android:background="@drawable/button_shape"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:id="@+id/clicker"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.497"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="36sp"
+                app:layout_constraintVertical_bias="0.021" android:textColor="@color/colorAccent"/>
     <Switch
             android:text="Switch"
             android:layout_width="wrap_content"

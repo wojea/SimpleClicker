@@ -10,15 +10,19 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".SupriseActivity"
-                  android:parentActivityName=".RegisterFormula">
+                  android:parentActivityName=".RegisterFormula"
+                  android:screenOrientation="landscape">
         </activity>
         <activity android:name=".RegisterFormula"
-                  android:parentActivityName=".MainActivity">
+                  android:parentActivityName=".MainActivity"
+                  android:screenOrientation="portrait">
         </activity>
         <activity android:name=".MainMenu"
-                  android:parentActivityName=".MainActivity">
+                  android:parentActivityName=".MainActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

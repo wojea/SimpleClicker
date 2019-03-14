@@ -40,6 +40,7 @@ class RegisterFormula : AppCompatActivity() {
                 this.startActivity(appIntent)
                 true
             } catch (ex: ActivityNotFoundException) {
+                Toast.makeText(this@RegisterFormula, "Putin wants to know your location", Toast.LENGTH_LONG).show()
                 this.startActivity(webIntent)
                 true
             }
