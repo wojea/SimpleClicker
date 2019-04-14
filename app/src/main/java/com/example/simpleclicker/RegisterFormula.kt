@@ -28,7 +28,7 @@ class RegisterFormula : AppCompatActivity() {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             //getString(R.strings. id stringa
-            //finish()
+            finish()
         }
 
         b_return1.setOnLongClickListener {
