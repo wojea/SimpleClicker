@@ -23,6 +23,8 @@ class RegisterFormula : AppCompatActivity() {
         var b_register1 = findViewById<Button>(R.id.register1B)
         var b_return1 = findViewById<Button>(R.id.return1B)
 
+        val registerViewModel:UserViewModel = UserViewModel(application)
+
         b_return1.setOnClickListener {
             //return to login activity
             val intent = Intent(this,MainActivity::class.java)
@@ -50,9 +52,14 @@ class RegisterFormula : AppCompatActivity() {
         }
 
         b_register1.setOnClickListener {
-            //if passwords match shows toast that user is registered else shows other toast
+            if(password1.text.toString().equals(et_pass2.text.toString())){
+                //registerViewModel.
+            }
+
+            /*
             if(password1.text.toString().equals(et_pass2.text.toString())) Toast.makeText(this@RegisterFormula, "Registered successfully", Toast.LENGTH_LONG).show()
             else Toast.makeText(this@RegisterFormula, "Passwords do not match", Toast.LENGTH_LONG).show()
+            */
         }
 
         b_register1.setOnLongClickListener {
