@@ -1,18 +1,18 @@
 package com.example.simpleclicker
 
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.view.ViewPager
-import android.support.design.widget.TabLayout
-import android.support.v7.widget.Toolbar
+import androidx.viewpager.widget.ViewPager
+import androidx.appcompat.widget.Toolbar
+import com.google.android.material.tabs.TabLayout
 
 
 class Settings : AppCompatActivity(), Appearance.OnFragmentInteractionListener, Language.OnFragmentInteractionListener, MyAccount.OnFragmentInteractionListener {
 
     override fun onFragmentInteraction(uri: Uri){}
 
-    private lateinit var viewpager: ViewPager
+    private lateinit var viewpager: androidx.viewpager.widget.ViewPager
     private lateinit var tabs: TabLayout
 
     //TODO: implement settings

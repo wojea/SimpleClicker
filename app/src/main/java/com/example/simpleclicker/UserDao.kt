@@ -1,6 +1,6 @@
 package com.example.simpleclicker
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
@@ -30,7 +30,7 @@ interface UserDao{
     fun delete(user: User)
 
     companion object {
-        const val REGISTERQUERY = "INSERT INTO users (username,password) VALUES (:login,:pass);"
+        const val REGISTERQUERY = "INSERT INTO users (username,password,points) VALUES (:login,:pass,0);"
         const val GETALLUSERSQUERY = "SELECT * FROM users"
         const val FINDUSERQUERY = "SELECT * FROM users WHERE username LIKE :search "
         const val GETUSERSCOREQUERY = "SELECT points FROM users WHERE username LIKE :search "

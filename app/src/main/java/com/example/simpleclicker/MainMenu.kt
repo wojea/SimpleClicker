@@ -2,24 +2,24 @@ package com.example.simpleclicker
 
 import android.content.DialogInterface
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.graphics.Color;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Switch
 import android.view.View;
 import android.widget.TextView
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
 class MainMenu : AppCompatActivity() {
 
-    lateinit var coordinatorLayout:CoordinatorLayout
+    lateinit var coordinatorLayout: androidx.coordinatorlayout.widget.CoordinatorLayout
     lateinit var s_clicker:Switch
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +28,7 @@ class MainMenu : AppCompatActivity() {
         var b_clicker = findViewById<Button>(R.id.clicker)
         var b_check = findViewById<Button>(R.id.check)
         s_clicker = findViewById<Switch>(R.id.switchclicker)
-        coordinatorLayout = findViewById<CoordinatorLayout>(R.id.coordinatorLayout)
+        coordinatorLayout = findViewById<androidx.coordinatorlayout.widget.CoordinatorLayout>(R.id.coordinatorLayout)
 
         Picasso.get().load("https://i.imgur.com/vVZeeU4.png").into(demonstration)
 
@@ -68,7 +68,7 @@ class MainMenu : AppCompatActivity() {
             })
             .setActionTextColor(Color.YELLOW)
         val snackView = snackbar.getView()
-        val textView = snackView.findViewById<TextView>(android.support.design.R.id.snackbar_text)
+        val textView = snackView.findViewById<TextView>(R.id.snackbar_text)
         textView.setTextColor(Color.BLUE)
         snackbar.show()
     }

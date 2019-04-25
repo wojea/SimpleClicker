@@ -1,8 +1,6 @@
 package com.example.simpleclicker
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
+import androidx.fragment.app.*
 
 class SettingsAdapter(fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {
 

@@ -17,7 +17,7 @@ public abstract class UserRoomDatabase : RoomDatabase() {
                     context.applicationContext,
                     UserRoomDatabase::class.java,
                     "Word_database"
-                ).build()
+                ).allowMainThreadQueries().build()
                     INSTANCE = instance
                 instance
             }
