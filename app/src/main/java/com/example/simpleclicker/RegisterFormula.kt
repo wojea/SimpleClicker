@@ -52,8 +52,11 @@ class RegisterFormula : AppCompatActivity() {
         }
 
         b_register1.setOnClickListener {
-            if(password1.text.toString().equals(et_pass2.text.toString())){
-                //registerViewModel.
+            if(password1.text.toString().equals(et_pass2.text.toString())&&password1.text.toString()!=""&&username1.text.toString()!="")
+            {
+                registerViewModel.registerUser(username1.text.toString(),password1.text.toString())
+            }else{
+                Toast.makeText(this@RegisterFormula, "Passwords must match, username and passwords can't be empty", Toast.LENGTH_LONG).show()
             }
 
             /*

@@ -14,7 +14,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     private val scope = CoroutineScope(coroutineContext)
 
     private val repository: UserRepository
-    val allUsers: LiveData<List<User>>
+    val allUsers: List<User>
 
     init {
         val database = UserRoomDatabase.getDatabase(application)

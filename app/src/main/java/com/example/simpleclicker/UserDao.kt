@@ -12,10 +12,10 @@ interface UserDao{
     fun register(login:String,pass:String)
 
     @Query(GETALLUSERSQUERY)
-    fun getAllUsers(): LiveData<List<User>>
+    fun getAllUsers(): List<User>
 
     @Query(FINDUSERQUERY)
-    fun findUser(search: String): LiveData<List<User>>
+    fun findUser(search: String): List<User>
 
     @Query(GETUSERSCOREQUERY)
     fun getUserScore(search: String): Int
