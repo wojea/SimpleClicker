@@ -4,7 +4,6 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.graphics.Color;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import android.view.Menu
@@ -13,30 +12,40 @@ import android.widget.Button
 import android.widget.Switch
 import android.view.View;
 import android.widget.TextView
+import com.example.simpleclicker.db.UserViewModel
 import com.google.android.material.snackbar.Snackbar
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_main_menu.*
 
 class MainMenu : AppCompatActivity() {
 
     lateinit var coordinatorLayout: androidx.coordinatorlayout.widget.CoordinatorLayout
     lateinit var s_clicker:Switch
+    lateinit var session:SessionManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
+        session = SessionManager(applicationContext)
+        val loginViewModel: UserViewModel =
+            UserViewModel(application)
+
         var b_clicker = findViewById<Button>(R.id.clicker)
+        b_clicker.setText((loginViewModel.getUserScore(session.getUserLogin())).toString())
+
         var b_check = findViewById<Button>(R.id.check)
         s_clicker = findViewById<Switch>(R.id.switchclicker)
         coordinatorLayout = findViewById<androidx.coordinatorlayout.widget.CoordinatorLayout>(R.id.coordinatorLayout)
 
-        Picasso.get().load("https://i.imgur.com/vVZeeU4.png").into(demonstration)
+        //Picasso.get().load("https://i.imgur.com/vVZeeU4.png").into(demonstration)
 
 
 
         //TODO: jak ustawić początkową wartość na clickerze
         b_clicker.setOnClickListener {
-            if (s_clicker.isChecked) b_clicker.setText((b_clicker.text.toString().toInt() + 1).toString())
+            if (s_clicker.isChecked)
+            {
+                b_clicker.setText((b_clicker.text.toString().toInt() + 1).toString())
+                loginViewModel.setUserScore(session.getUserLogin(),b_clicker.text.toString().toInt())
+            }
             else showSnackbar()
         }
 

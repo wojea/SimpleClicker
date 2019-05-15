@@ -55,7 +55,7 @@ class Appearance : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Picasso.get().load("https://i.imgur.com/vVZeeU4.png").into(imagefragment1)
+        //Picasso.get().load("https://i.imgur.com/vVZeeU4.png").into(imagefragment1)
     }
 
     override fun onAttach(context: Context) {

@@ -1,8 +1,7 @@
-package com.example.simpleclicker
+package com.example.simpleclicker.db
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -20,6 +19,18 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         val database = UserRoomDatabase.getDatabase(application)
         repository = UserRepository(database.userDao())
         allUsers = repository.allUsers
+    }
+
+    fun findUser(username:String): User = runBlocking()
+    {
+        val defferedUser = async {repository.findUser(username)}
+        runBlocking { defferedUser.await() }
+    }
+
+    fun checkForUser(username:String):Int = runBlocking()
+    {
+        val defferedVal = async {repository.checkForUser(username)}
+        runBlocking { defferedVal.await() }
     }
 
     fun insert(user: User) = scope.launch(Dispatchers.IO) {

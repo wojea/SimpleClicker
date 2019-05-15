@@ -1,4 +1,4 @@
-package com.example.simpleclicker
+package com.example.simpleclicker.db
 import android.content.Context
 import androidx.room.*
 

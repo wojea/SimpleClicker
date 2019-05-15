@@ -6,10 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import android.content.ActivityNotFoundException
-import android.R.id
 import android.net.Uri
+import com.example.simpleclicker.db.UserViewModel
 import kotlinx.android.synthetic.main.activity_register_formula.*
 
 
@@ -23,7 +22,8 @@ class RegisterFormula : AppCompatActivity() {
         var b_register1 = findViewById<Button>(R.id.register1B)
         var b_return1 = findViewById<Button>(R.id.return1B)
 
-        val registerViewModel:UserViewModel = UserViewModel(application)
+        val registerViewModel: UserViewModel =
+            UserViewModel(application)
 
         b_return1.setOnClickListener {
             //return to login activity
@@ -54,7 +54,8 @@ class RegisterFormula : AppCompatActivity() {
         b_register1.setOnClickListener {
             if(password1.text.toString().equals(et_pass2.text.toString())&&password1.text.toString()!=""&&username1.text.toString()!="")
             {
-                registerViewModel.registerUser(username1.text.toString(),password1.text.toString())
+                if(registerViewModel.checkForUser(username1.text.toString())==0) registerViewModel.registerUser(username1.text.toString(),password1.text.toString())
+                else Toast.makeText(this@RegisterFormula, "Such user already exists", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(this@RegisterFormula, "Passwords must match, username and passwords can't be empty", Toast.LENGTH_LONG).show()
             }
