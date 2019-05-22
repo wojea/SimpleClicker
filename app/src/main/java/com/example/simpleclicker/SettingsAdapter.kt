@@ -2,7 +2,7 @@ package com.example.simpleclicker
 
 import androidx.fragment.app.*
 
-class SettingsAdapter(fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {
+class SettingsAdapter(fm: FragmentManager?) : FragmentStatePagerAdapter(fm!!) {
 
     private val mFragmentList: ArrayList<Fragment> = ArrayList()
     private val mFragmentTitleList: ArrayList<String> = ArrayList()

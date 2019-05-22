@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), LoginContract.View{
 
     lateinit var session:SessionManager
-    var presenter: LoginPresenter? = null
+    lateinit var presenter: LoginPresenter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), LoginContract.View{
 
     override fun initView() {
         loginB.setOnClickListener {
-            if(presenter!!.login(username.text.toString(),password.text.toString())){
+            if(presenter.login(username.text.toString(),password.text.toString())){
                 val intent = Intent(this,MainMenu::class.java)
                 startActivity(intent)
             }

@@ -8,26 +8,21 @@ import com.example.simpleclicker.db.UserViewModel
 class LoginModel(application: Application):LoginContract.Model {
 
     val loginViewModel = UserViewModel(application)
+    //injection
     val session = SessionManager(application.applicationContext)
 
     override fun login(username:String,password:String):Boolean
     {
         val loggedUser: User? = try{loginViewModel.findUser(username)} catch(e:Exception){null}
-        if(loggedUser!=null)
-        {
-            if(password.equals(loggedUser.password))
-            {
+        return if(loggedUser!=null) {
+            if(password == loggedUser.password) {
                 session.createLoginSession(username)
-                return true
+                true
+            } else {
+                false
             }
-            else
-            {
-                return false
-            }
-        }
-        else
-        {
-            return false
+        } else {
+            false
         }
     }
 
