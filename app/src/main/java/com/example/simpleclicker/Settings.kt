@@ -28,7 +28,7 @@ class Settings : AppCompatActivity(), Appearance.OnFragmentInteractionListener, 
         adapter = SettingsAdapter(supportFragmentManager)
         adapter!!.addFragment(MyAccount(),"My Account")
         adapter!!.addFragment(Language(),"Language")
-        adapter!!.addFragment(Appearance(),"Appearance")
+        adapter!!.addFragment(Appearance(),"Posts")
         viewpager.adapter=adapter
         tabs.setupWithViewPager(viewpager)
         //setupViewPager()
