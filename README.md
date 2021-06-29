@@ -1,0 +1,1 @@
+Moja pierwsza aplikacja mobilna na platformę Android. W ramach tej aplikacji poznałem całe spektrum rozwiązań przydatnych w programowaniu aplikacji na androida (shared preferences, praca na fragmentach, retrofit, room, recycler view).
